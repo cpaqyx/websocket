@@ -1,0 +1,21 @@
+server:
+  port: 9000
+spring:
+  application:
+    name: service-gateway
+  cloud:
+#    nacos:
+#      discovery:
+#        server-addr: localhost:8841
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+#logging:
+#  level:
+#    root: debug

@@ -1,0 +1,12 @@
+.settings
+/.metadata/
+applog
+
+/.metadata/
+/.idea/
+.mvn/
+
+Servers
+target
+.classpath
+.project
