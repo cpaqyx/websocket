@@ -1,0 +1,31 @@
+erlang下载
+https://www.erlang.org/downloads
+安装路径：
+C:\Program Files\er23.0
+
+
+rabbitmq下载
+https://www.rabbitmq.com/install-windows.html
+安装路径：
+C:\Program Files\RabbitMQ Server\rabbitmq_server-3.8.5\
+
+
+启动rabbitmq
+cd C:\Program Files\RabbitMQ Server\rabbitmq_server-3.8.5\sbin
+rabbitmq-plugins enable rabbitmq_management
+
+
+重启
+rabbitmq-service stop
+rabbitmq-service start
+
+
+清除所有队列数据：
+rabbitmqctl stop_app
+rabbitmqctl reset
+rabbitmqctl start_app
+
+修改端口
+打开C:\Program Files\RabbitMQ Server\rabbitmq_server-3.8.5\ebin文件夹
+打开ebin文件夹，找到文件“rabbit.app”
+修改tcp_listeners里面的端口号5672为5673或你想指定的端口
