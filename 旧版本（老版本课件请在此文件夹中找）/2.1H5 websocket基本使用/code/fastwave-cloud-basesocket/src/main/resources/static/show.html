@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<title>Floor View</title>
+<script src="/js/websocket.js"></script>
+<script src="/js/jquery.min.js"></script>
+<script id="code">
+    var DEBUG_FLAG = true;
+    $(function()
+    {
+        //启动websocket
+        createWebSocket();
+
+    });
+
+    // 当有消息推送后触发下面事件
+    function onWsMessage(evt) {
+        var jsonStr = evt.data;
+        writeToScreen(jsonStr);
+    }
+
+    function writeToScreen(message) {
+        if(DEBUG_FLAG)
+        {
+            $("#debuggerInfo").val($("#debuggerInfo").val() + "\n" + message);
+        }
+    }
+
+    function sendMessageBySocket()
+    {
+      var msg = $("#msg").val();
+      wsObj.send(msg);
+    }
+</script>
+</head>
+
+<body style="margin: 0px;padding: 0px;overflow: hidden; ">
+  <!-- 显示消息-->
+  <textarea id="debuggerInfo" style="width:100%;height:200px;"></textarea>
+  <!-- 发送消息-->
+  <div>消息：<input type="text" id="msg"></input></div>
+  <div><input type="button" value="发送消息" onclick="sendMessageBySocket()"></input></div>
+</body>
+</html>
