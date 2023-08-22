@@ -24,7 +24,7 @@ public class WebSocketEndpoint {
 	private Session session;
 
 	/**
-	 * 连接建立成功调用的方法
+	 * 连接建立成功调用的方法，注意这里的参数要与前端保持一致
 	 */
 	@OnOpen
 	public void onOpen(Session session, @PathParam("userId") String userId) {
