@@ -1,3 +1,0 @@
-websocket:
-  chat:
-    endpoint: "http://localhost:8071/websocket/"
